@@ -43,7 +43,7 @@ impl TokenAmtParser {
             .checked_mul(self.atomics_per_one())
             .ok_or(TokenAmtParseError)?;
 
-        if dec.len() > self.decimals.into() {
+        if dec.len() > self.decimals as usize {
             return Err(TokenAmtParseError);
         }
         // subtraction overflow safety: decimals < len checked above
