@@ -73,16 +73,16 @@ where
     }
 }
 
-impl<T> ReadonlyAccountData for &T
-where
-    T: ReadonlyAccountData + ?Sized,
-{
-    type DataDeref<'d> = T::DataDeref<'d> where Self: 'd;
-
-    fn data(&self) -> Self::DataDeref<'_> {
-        (*self).data()
-    }
-}
+// impl<T> ReadonlyAccountData for &T
+// where
+    // T: ReadonlyAccountData + ?Sized,
+// {
+    // type DataDeref<'d> = T::DataDeref<'d> where Self: 'd;
+//
+    // fn data(&self) -> Self::DataDeref<'_> {
+        // (*self).data()
+    // }
+// }
 
 impl<T> ReadonlyAccountOwnerBytes for &T
 where
