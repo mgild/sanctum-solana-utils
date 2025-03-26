@@ -6,6 +6,7 @@ use crate::{
     ReadonlyAccountData, ReadonlyAccountIsExecutable, ReadonlyAccountLamports,
     ReadonlyAccountOwnerBytes, ReadonlyAccountRentEpoch,
 };
+use solana_program::account_info::AccountInfo;
 
 // impl for
 // - Account
