@@ -7,6 +7,7 @@ pub mod keyed_bytes;
 pub mod keyed_conv;
 pub mod program;
 pub mod pubkey;
+pub use pubkey::*;
 pub mod sdk;
 
 use core::ops::Deref;
