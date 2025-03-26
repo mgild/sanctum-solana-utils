@@ -22,3 +22,24 @@ impl ReadonlyAccountPubkeyBytes for MintWithTokenProgram {
         self.pubkey.to_bytes()
     }
 }
+
+pub trait ReadonlyAccountOwner {
+    fn owner(&self) -> Pubkey;
+}
+
+pub trait ReadonlyAccountPubkey {
+    fn pubkey(&self) -> Pubkey;
+}
+
+impl<T: ReadonlyAccountOwnerBytes> ReadonlyAccountOwner for T {
+    fn owner(&self) -> Pubkey {
+        self.owner_bytes().into()
+    }
+}
+
+impl<T: ReadonlyAccountPubkeyBytes> ReadonlyAccountPubkey for T {
+    fn pubkey(&self) -> Pubkey {
+        self.pubkey_bytes().into()
+    }
+}
+
