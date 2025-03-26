@@ -25,7 +25,7 @@ impl ReadonlyAccountLamports for Account {
     }
 }
 
-impl ReadonlyAccountData for AccountInfo<'_> {
+impl ReadonlyAccountData for &AccountInfo<'_> {
     type DataDeref<'d> = &'d [u8];
 
     #[inline]
