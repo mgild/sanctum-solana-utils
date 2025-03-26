@@ -30,7 +30,7 @@ impl ReadonlyAccountData for &AccountInfo<'_> {
 
     #[inline]
     fn data(&self) -> Self::DataDeref<'_> {
-        &self.data
+        &self.data()
     }
 }
 
