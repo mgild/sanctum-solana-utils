@@ -26,7 +26,7 @@ impl ReadonlyAccountLamports for Account {
 }
 
 impl ReadonlyAccountData for &AccountInfo<'_> {
-    type DataDeref<'d> = &'d [u8];
+    type DataDeref<'d> = &'d [u8] where Self: 'd;
 
     #[inline]
     fn data(&self) -> Self::DataDeref<'_> {
